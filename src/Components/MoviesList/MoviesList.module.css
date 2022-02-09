@@ -1,0 +1,19 @@
+.page, .curent_page{
+    border: 1px solid silver;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+.curent_page{
+    border: 2px solid silver;
+    font-weight: 700;
+}
+.wrap_movie{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    column-gap: 15px;
+    row-gap: 15px;
+
+}
