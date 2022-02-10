@@ -1,4 +1,4 @@
-import {GenreBadge, Header, MovieInfo, MoviesList, UserInfo} from "./Components";
+import {Header, MovieInfo, MoviesList, UserInfo} from "./Components";
 import {Route, Routes} from "react-router-dom";
 
 import css from './App.module.css';
@@ -8,10 +8,8 @@ function App() {
         <Header/>
         <div className={css.container}>
             <Routes>
-                <Route path={'/'} element={<MoviesList/>}>
-                    <Route path={'details'} element={<MovieInfo/>}/>
-                </Route>
-                <Route path={':id/gender'} element={<GenreBadge/>}/>
+                <Route path={'/'} element={<MoviesList/>}/>
+                <Route path={':id/movieInfo'} element={<MovieInfo/>}/>
                 <Route path={'/user'} element={<UserInfo/>}/>
             </Routes>
         </div>

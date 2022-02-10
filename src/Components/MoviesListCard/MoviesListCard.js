@@ -11,7 +11,7 @@ const MoviesListCard = ({item:{title, overview, id, vote_average, poster_path}})
             <div className={css.movie_card}>
                 <img src={urlImg+poster_path} alt={title}/>
                 <p>{title}</p>
-                <NavLink to={id+`/gender`} className={css.movie_info_link}>
+                <NavLink to={id+`/movieInfo`} className={css.movie_info_link}>
                     <div className={css.movie_info}>
                         <h2>{title}</h2>
                         <p>{overview}</p>

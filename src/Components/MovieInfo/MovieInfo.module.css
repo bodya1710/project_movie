@@ -1,0 +1,41 @@
+.movie_inf0_wrap{
+    height: calc(100vh - 72px);
+    padding: 10px 0;
+    display: flex;
+    justify-content: end;
+    column-gap: 30px;
+    color: #d9d7e0;
+}
+.movie_inf0_wrap h2{
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+.movie_inf0_wrap p{
+    font-size: 18px;
+}
+.movie_inf0_wrap img{
+    height: 100%;
+}
+.production_countries_container{
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+.reting_container{
+    margin: 15px 0;
+}
+.reting_container h2{
+    margin: 0;
+}
+.production_companies_container{
+    margin-top: 20px;
+}
+.production_companies_container a{
+    text-decoration: none;
+    color: #d9d7e0;
+}
+.production_companies_container h2{
+    font-size: 32px;
+}
