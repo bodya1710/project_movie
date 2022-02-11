@@ -15,5 +15,27 @@
     margin: 20px 0;
     column-gap: 15px;
     row-gap: 15px;
-
+}
+.btn_page{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.btn_page button{
+    border: none;
+    border-radius: 14px;
+    background-color: #A869F0;
+    box-shadow: 0 0 100px #A869F0;
+    width: 100px;
+    height: 40px;
+    padding: 5px 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 20px;
+}
+.btn_page button:hover{
+    box-shadow: 0 0 150px #A869F0;
 }

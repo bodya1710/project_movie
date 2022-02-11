@@ -17,9 +17,10 @@ export const getDetails = createAsyncThunk(
 
 export const getMovies = createAsyncThunk(
     'moviesSlice/getMovies',
-    async (_,{rejectedWithValue})=>{
+    async ({data},{rejectedWithValue})=>{
         try {
-            const movies = await moviesService.getAll();
+            const movies = await moviesService.getAll(data);
+            console.log(movies)
             return movies
         }catch (e) {
             return  rejectedWithValue(e.message)
@@ -36,9 +37,15 @@ const moviesSlice = createSlice({
         moviesDetails: null,
         status: null,
         error:null,
-        currentPage:1,
-        totalPages:0
-
+        currentPage:1
+    },
+    reducers:{
+        incrementPage:(state, action)=>{
+            state.currentPage = action.payload.page
+        },
+        decrementtPage:(state, action)=>{
+            state.currentPage = action.payload.page
+        }
     },
     extraReducers:{
         [getMovies.pending]:(state, action)=>{
@@ -71,4 +78,5 @@ const moviesSlice = createSlice({
 
 const moviesReducer = moviesSlice.reducer;
 
+export const {incrementPage, decrementtPage} = moviesSlice.actions;
 export default moviesReducer

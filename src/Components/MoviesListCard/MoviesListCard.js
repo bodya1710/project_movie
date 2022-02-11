@@ -15,7 +15,7 @@ const MoviesListCard = ({item:{title, overview, id, vote_average, poster_path}})
                     <div className={css.movie_info}>
                         <h2>{title}</h2>
                         <p>{overview}</p>
-                        <p>{vote_average}</p>
+                        <p className={css.vote_average_container}>Rating: {vote_average}</p>
                     </div>
                 </NavLink>
 

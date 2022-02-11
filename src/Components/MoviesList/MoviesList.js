@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {incrementPage, decrementtPage} from "../../store/movies.slice"
 
 import {getMovies} from "../../store/movies.slice";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
@@ -7,31 +8,35 @@ import css from './MoviesList.module.css';
 
 const MoviesList = () => {
 
-    const {movies, totalPages, currentPage} = useSelector(state => state['moviesReducer']);
+    const {movies, currentPage} = useSelector(state => state['moviesReducer']);
 
     const dispatch  = useDispatch();
-
+    console.log(currentPage)
     useEffect(()=>{
-        dispatch(getMovies())
-    },[])
-
-    // const pages = []
-    // for (let i = 0; i < totalPages; i++) {
-    //     pages.push(totalPages[i]);
-    // }
-
+        dispatch(getMovies({data:currentPage}))
+    },[currentPage])
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    }
     return (
         <div>
             <div className={css.wrap_movie}>
                 {movies.map(movie => <MoviesListCard key={movie.id}  item={movie}/>)}
-            </div>
-            {/*<div>*/}
-            {/*    {pages.map((page, index)=> <span*/}
-            {/*        key={index}*/}
-            {/*        className={currentPage === page ? css.curent_page : css.page}*/}
-            {/*    >{page}</span>)}*/}
-            {/*</div>*/}
+                <div className={css.btn_page}>
+                    <button onClick={(e)=>{
+                        if (currentPage > 1){
+                            currentPage && dispatch(decrementtPage({page:currentPage-1}))
+                            scrollTop()
+                        }
+                        e.disabled = true;
+                    }}>Previous</button>
+                    <button onClick={()=> {
+                            dispatch(incrementPage({page: currentPage + 1}))
+                            scrollTop()
+                    }}>Next</button>
+                </div>
 
+            </div>
         </div>
     );
 };

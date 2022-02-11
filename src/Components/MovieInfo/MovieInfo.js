@@ -4,7 +4,7 @@ import {NavLink, useParams} from "react-router-dom";
 
 import css from './MovieInfo.module.css';
 import {getDetails} from "../../store/movies.slice";
-import {urlImg, urlImgBc} from "../../constans/urls.img";
+import {urlImg} from "../../constans/urls.img";
 
 const MovieInfo = () => {
     const {moviesDetails} = useSelector(state => state['moviesReducer']);
