@@ -17,13 +17,12 @@ export const getDetails = createAsyncThunk(
 
 export const getMovies = createAsyncThunk(
     'moviesSlice/getMovies',
-    async ({data},{rejectedWithValue})=>{
+    async ({data},{rejectWithValue})=>{
         try {
             const movies = await moviesService.getAll(data);
-            console.log(movies)
             return movies
         }catch (e) {
-            return  rejectedWithValue(e.message)
+            return  rejectWithValue(e.message)
         }
     }
 )

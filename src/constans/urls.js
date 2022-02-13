@@ -7,4 +7,4 @@ export const urls = {
     genders:'/genre/movie/list?api_key=8606d3bcebacc307fd3773f3fb19be89'
 }
 
-//&page=2
+

@@ -11,8 +11,6 @@ const Header = () => {
                     <NavLink to="/">Movies</NavLink>
                     <NavLink to="/gender">Genres</NavLink>
                     <NavLink to="/user"><img src={user}/></NavLink>
-
-
                 </div>
 
             </div>

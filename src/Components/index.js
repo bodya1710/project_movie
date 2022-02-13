@@ -6,3 +6,4 @@ export * from './MoviesList/MoviesList';
 export * from './PosterPreview/PosterPreview';
 export * from './MovieInfo/MovieInfo';
 export * from './GenreBadge/GenreBadge';
+export * from './GenderListMovie/GenderListMovie';

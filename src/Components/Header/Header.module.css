@@ -21,10 +21,9 @@
     color: #a5a1b2;
     text-decoration: none;
     padding: 0 10px;
-}
-.header_container a .active{
-    color: #A869F0;
-}
+}.header_container a[class='active']{
+    color: deepskyblue;
+ }
 .header_container img{
     height: 30px;
     width: 30px;

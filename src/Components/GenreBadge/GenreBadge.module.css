@@ -1,0 +1,24 @@
+.nav_genders{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+.nav_genders a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 14px;
+    background-color: #A869F0;
+    box-shadow: 0 0 5px #A869F0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.nav_genders a:hover{
+    box-shadow: 0 0 25px #A869F0;
+}
+.nav_genders a[class='active']{
+    color: deepskyblue;
+    box-shadow: 0 0 25px #A869F0;
+}

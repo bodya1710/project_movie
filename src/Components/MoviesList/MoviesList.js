@@ -11,7 +11,7 @@ const MoviesList = () => {
     const {movies, currentPage} = useSelector(state => state['moviesReducer']);
 
     const dispatch  = useDispatch();
-    console.log(currentPage)
+
     useEffect(()=>{
         dispatch(getMovies({data:currentPage}))
     },[currentPage])
