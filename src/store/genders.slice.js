@@ -18,10 +18,9 @@ export const getGenders = createAsyncThunk(
 
 export const getGendersListMovies = createAsyncThunk(
     'gendersSlice/getGendersListMovies',
-    async ({data},{rejectWithValue})=>{
+    async ({id,currentPage},{rejectWithValue})=>{
         try {
-            console.log(data)
-            const gendersListMovie = await gendersService.getById(data)
+            const gendersListMovie = await gendersService.getById(id,currentPage)
             return gendersListMovie
         }catch (e) {
             return rejectWithValue(e.message)
@@ -36,14 +35,18 @@ const gendersSlice = createSlice({
         gendersListMovie: null,
         status: null,
         error: null,
-        currentPage: 1
+        currentPage: 2
     },
     reducers:{
         incrementPage:(state, action)=>{
             state.currentPage = action.payload.page
         },
-        decrementtPage:(state, action)=>{
+        decrementtPage:(state, action)=> {
             state.currentPage = action.payload.page
+        },
+        firsPage:(state, action)=> {
+            state.currentPage = action.payload.page
+        }
     },
     extraReducers: {
         [getGenders.pending]: (state, action) => {
@@ -70,9 +73,8 @@ const gendersSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         }
-    }
+     }
     })
-
-
     const gendersReducer = gendersSlice.reducer;
+    export const {incrementPage, decrementtPage, firsPage} = gendersSlice.actions;
     export default gendersReducer

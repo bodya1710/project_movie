@@ -1,0 +1,7 @@
+.wrap_movie{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    column-gap: 15px;
+    row-gap: 15px;
+}

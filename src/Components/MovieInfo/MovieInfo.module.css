@@ -32,10 +32,12 @@
 .production_companies_container{
     margin-top: 20px;
 }
-.production_companies_container a{
+.movie_inf0_wrap a {
     text-decoration: none;
     color: #d9d7e0;
 }
 .production_companies_container h2{
     font-size: 32px;
-}
+}.genres_container{
+     margin: 10px 0;
+ }

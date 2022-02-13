@@ -71,11 +71,11 @@ const moviesSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         }
-
     }
 })
 
 const moviesReducer = moviesSlice.reducer;
 
 export const {incrementPage, decrementtPage} = moviesSlice.actions;
+
 export default moviesReducer

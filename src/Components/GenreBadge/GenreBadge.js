@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {NavLink, Outlet} from "react-router-dom";
 
-import {getGenders} from "../../store/genders.slice";
+
+import {firsPage, getGenders} from "../../store/genders.slice";
 import css from "./GenreBadge.module.css";
 
 const GenreBadge = () => {
@@ -18,7 +19,7 @@ const GenreBadge = () => {
         genders && (
         <div>
             <div className={css.nav_genders}>
-                {genders.genres.map(gender => <NavLink key={gender.id} to={gender.id+''}>{gender.name}</NavLink> )}
+                {genders.genres.map(gender => <NavLink onClick={()=>dispatch(firsPage({page:1}))} key={gender.id} to={gender.id+''}>{gender.name}</NavLink> )}
             </div>
             <div><Outlet/></div>
         </div>

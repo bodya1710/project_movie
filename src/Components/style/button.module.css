@@ -1,0 +1,16 @@
+.btn{
+    border: none;
+    border-radius: 14px;
+    background-color: #A869F0;
+    box-shadow: 0 0 100px #A869F0;
+    height: 40px;
+    padding: 5px 15px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 20px;
+}
+.btn:hover{
+    box-shadow: 0 0 150px #A869F0;
+}

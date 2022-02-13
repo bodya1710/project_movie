@@ -22,6 +22,9 @@ const MovieInfo = () => {
             <div className={css.movie_inf0_wrap}>
                 <div>
                     <div>
+                        <p className={css.genres_container}>Genres:
+                        {moviesDetails.genres.map(genre => <NavLink key={genre.id} to={`/gender/${genre.id}`}> {genre.name}</NavLink>)}
+                        </p>
                         <h2>{moviesDetails.title}</h2>
                         <div className={css.production_countries_container}><p>Production countries:</p>
                             {moviesDetails.production_countries.map((item, index) => <p key={index}>{item.name}</p>)}</div>
@@ -30,12 +33,13 @@ const MovieInfo = () => {
                             <h2 className={css.rating_num}>{moviesDetails.vote_average}</h2>
                             <p>Rating</p>
                         </div>
+                        <p>Runtime: {moviesDetails.runtime}</p>
                     </div>
                     <div className={css.production_companies_container}>
                         <h2>Production_companies:</h2>
                         {moviesDetails.production_companies.map((item, index) =>
                             <div key={index}>
-                                {<NavLink exact to = {`/`+item.id+`/movieInfo`} >
+                                {<NavLink to = {`/${item.id}/movieInfo`} >
                                     <p>- {item.name}</p>
                                 </NavLink>}
                             </div>)}
@@ -48,3 +52,5 @@ const MovieInfo = () => {
 };
 
 export {MovieInfo};
+
+// <NavLink key={genre.id} to={`/gender${genre.id}`/>
