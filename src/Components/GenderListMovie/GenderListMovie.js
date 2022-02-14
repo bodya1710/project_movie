@@ -23,7 +23,6 @@ const GenderListMovie = () => {
     const scrollTop = () => {
         window.scrollTo(0, 0);
     }
-    console.log(gendersListMovie)
     return (
         gendersListMovie &&(
         <div>

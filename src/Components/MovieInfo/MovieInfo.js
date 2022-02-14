@@ -16,7 +16,6 @@ const MovieInfo = () => {
     useEffect(()=>{
         dispatch(getDetails({data:id}))
     },[id])
-    console.log(moviesDetails)
     return (
         moviesDetails && (
             <div className={css.movie_inf0_wrap}>
@@ -52,5 +51,3 @@ const MovieInfo = () => {
 };
 
 export {MovieInfo};
-
-// <NavLink key={genre.id} to={`/gender${genre.id}`/>

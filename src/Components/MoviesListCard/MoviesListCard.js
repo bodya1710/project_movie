@@ -23,4 +23,3 @@ const MoviesListCard = ({item:{title, overview, id, vote_average, poster_path}})
 };
 
 export {MoviesListCard};
-//to={id.toString()} state={posts}>{id}) {title} </Link>
